@@ -64,7 +64,7 @@ struct DishBulder {
 }
 
 @DishBulder
-func cardbonara() -> Dish {
+func makeDish() -> Dish {
     if Bool.random() {
         Onion()
         Carrot()
@@ -75,8 +75,10 @@ func cardbonara() -> Dish {
     } else {
         Meat()
     }
+    
+    Salt()
 }
 
-(1...3).forEach { index in
-    print("\(index) - \(cardbonara().ingredients.map { $0.name() })")
+(1...3).forEach { dishNumber in
+    print("\(dishNumber) - \(makeDish().ingredients.map { $0.name() })")
 }
